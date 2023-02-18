@@ -84,7 +84,10 @@ body::-webkit-scrollbar {
     display: inline-block;
     margin: 0px 8px 8px 0px;
 }
-
+.my-details-info-container a {
+    color: white;
+    text-decoration: none;
+}
 
 .nav-menu li a {
     transition: color 0.5s, border-bottom 4s;

@@ -16,3 +16,47 @@ var interval;
     }
     window.scrollBy(0,30)
  }
+
+ /*****Fill bars Animation */
+
+ var progressBars = document.querySelectorAll('.skill-progress > div')
+ var skillContainer = document.getElementById('skill-con')
+ var animationDone =  false
+ window.addEventListener('scroll', checkScroll)
+  function intializeBar () {
+   for (var bar of progressBars) {
+      bar.style.width = 0 +'%'
+   }
+  }
+  function fillBars() {
+   for (let bar of progressBars) {
+      let targetWidth = bar.getAttribute('data-bar-width')
+      let Currentwidth = 0
+      let  interval = setInterval(function(){
+                if(Currentwidth > targetWidth) {
+                  clearInterval(interval)
+                  return
+                }
+                Currentwidth++
+                bar.style.width = Currentwidth + '%'
+      }, 5)
+   }
+  }
+  intializeBar()
+ function checkScroll() {
+   if(!animationDone && skillContainer.getBoundingClientRect().top < window.innerHeight) {
+      animationDone = true
+      fillBars()
+   }
+   if (window.scrollY < 20) {
+      animationDone = false
+      intializeBar()
+   }
+
+ }
+
+ window.addEventListener('scroll', function () {
+   var b=window.scrollY
+   console.log(b)
+ } )
+

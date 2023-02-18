@@ -375,10 +375,11 @@ section:nth-child(2n + 1) {
     box-shadow: 0 0 20px #74ADC8;
 }
 
-.portfolio-image-container:hover .portfolio-details {
+.portfolio-image-container:hover .portfolio-details{
     background-color: #80808078;
     color: white;
 }
+
 
 
 
